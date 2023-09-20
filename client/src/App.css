@@ -1,0 +1,121 @@
+* {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+#body-bg {
+    background-color: #1b1a1f;
+    
+}
+
+#form-bg {
+    background-color: #252429;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,.75);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,.75);
+    box-shadow: 0 2px 5px #000000bf;
+    
+}
+
+#form-bg > h2 {
+    color: white;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+#form-bg > input {
+    font-size: small;
+}
+
+#signup {
+    color: #7f7f81;
+    font-size: 13px;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+
+#d-login, #d-pw {
+    margin: 2px;
+}
+
+label {
+    color: #fefeff;
+}
+
+#login-input, #pw-input {
+    background-color: #1e1d22;
+    color: white;
+    font-size: 10px;
+    border-radius: 10px;
+    border-color: #333237;
+    margin-top: 8px;
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid #333237;
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+#login-input:focus, #pw-input:focus{
+    border-color: #7751dc;
+    outline: none;
+    background-color: #2c2a38;
+}
+
+#login-input::placeholder, #pw-input::placeholder {
+    font-size: 13px;
+}
+
+#login-input:hover, #pw-input:hover {
+    border-color: #7751dc;
+    background-color: #2c2a38;
+}
+
+.reg-container {
+    text-align: center;
+}
+
+.btn-login {
+    background-color: #7751dc;
+    color: #fffefd;
+    
+    font-size: 16px;
+    
+    width: 370px;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    
+    border: none;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,.75);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,.75);
+    box-shadow: 0 2px 2px #000000bf;
+
+    transform-origin: center;
+}
+
+.btn-login:hover {
+    cursor: pointer;
+    background-color: #5D3EB2;
+    transform: scale(1.05)
+}
+
+.btn-login:active {
+    background-color: #403366;
+    transform: scale(0.95)
+}
+
+.auth-message {
+    color: white;
+}
