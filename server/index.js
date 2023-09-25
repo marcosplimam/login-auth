@@ -22,11 +22,25 @@ const userSchema = new mongoose.Schema({
 const UserModel = mongoose.model("users", userSchema)
 
 
-app.post("/register", (req, res) => {
-    UserModel.create(req.body)
-    .then(users => res.json(users))
-    .catch(err => res.json(err))
-})
+app.post("/register", async (req, res) => {
+    try {
+        const { fullname, login, password } = req.body;
+
+        // Checar se já existe algum usuário com esse username
+        const existingUser = await UserModel.findOne({ login: login });
+
+        if (existingUser) {
+            return res.status(400).json({ error: "Username already exists." });
+        }
+
+        // Criar novo usuário
+        const newUser = await UserModel.create({ fullname, login, password });
+        res.json(newUser);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "An error occurred." });
+    }
+});
 
 app.post("/login", (req, res) => {
     const {fullname, login, password} = req.body;
@@ -36,7 +50,7 @@ app.post("/login", (req, res) => {
             if (user.password === password) {
                 res.json("Login successful. ✔️")
             } else {
-                res.json("Incorrect password Try another one")
+                res.json("Your password is incorrect, please try another one.")
             }
         } else {
             res.json("User not registered...")

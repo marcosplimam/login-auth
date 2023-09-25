@@ -1,0 +1,8 @@
+#logged-container {
+    background-color: #1b1a1f;
+    flex-direction: column;
+}
+
+#logged-bg h1, p {
+    color: white;
+}

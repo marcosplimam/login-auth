@@ -8,17 +8,26 @@ function Register() {
     const [fullname, setFullname] = useState();
     const [login, setLogin] = useState();
     const [password, setPassword] = useState();
+    const [error, setError] = useState("");
     const navigate = useNavigate();
 
     const Submit = (e) => { 
-        e.preventDefault();
-        axios.post("http://localhost:3001/register", {fullname, login, password})
-        .then(result => {
-            console.log(result)
-            navigate('/')
-        })
-        .catch(err => console.error(err))
-    }
+      e.preventDefault();
+      // Checa se o user é unico e se tem mais de 6 caracteres
+      if (login.length < 6) {
+          setError("Username must be at least 6 characters long.");
+      } else {
+          axios.post("http://localhost:3001/register", { fullname, login, password })
+              .then(result => {
+                  console.log(result)
+                  navigate('/');
+              })
+              .catch(err => {
+                  console.error(err);
+                  setError("Username already exists."); 
+              });
+      }
+  }
     
     return (
         <div id="register-body-bg" className="d-flex justify-content-center align-items-center vh-100">
@@ -67,6 +76,7 @@ function Register() {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
+            {error && <div className="error-message">{error}</div>}
             <div className="reg-container">
               <button type="submit" className="btn-register">Create</button>
             </div>

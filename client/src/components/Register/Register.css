@@ -77,6 +77,11 @@ label {
     background-color: #2c2a38;
 }
 
+.error-message {
+    color: #7f7f81;
+    font-size: 18px;
+}
+
 .reg-container {
     text-align: center;
 }

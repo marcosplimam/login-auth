@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { Link } from "react-router-dom";
-import './App.css'
+import { Link, useNavigate } from "react-router-dom";
+import '../../App'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import axios from 'axios';
 import './LoginPage.css';
@@ -9,12 +9,16 @@ function LoginPage() {
   const [login, setLogin] = useState();
   const [password, setPassword] = useState();
   const [authMessage, setAuthMessage] = useState('');
+  const navigate = useNavigate();
   
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post('http://localhost:3001/login', { login, password })
       .then(result => {
         setAuthMessage(result.data);
+        if (result.data === "Login successful. ✔️") {
+          navigate('/logged');
+        }
       })
       .catch(err => console.log(err));
   }
@@ -63,6 +67,7 @@ function LoginPage() {
             {authMessage}
           </div>
         )}
+      <br></br>
       <p id="or">or</p>
       </div>
       <div className="link-container">
