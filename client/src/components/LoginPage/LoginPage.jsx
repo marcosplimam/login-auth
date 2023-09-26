@@ -4,6 +4,7 @@ import '../../App'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import axios from 'axios';
 import './LoginPage.css';
+import logo from '../../assets/logo.png'
 
 function LoginPage() {
   const [login, setLogin] = useState();
@@ -26,6 +27,9 @@ function LoginPage() {
   return (
     <div id="body-bg" className="d-flex justify-content-center align-items-center vh-100">
       <div id="form-bg" className="p-3 w-25">
+      <div id="logo-container">
+          <img id="logo" src={logo} alt="Logo" />
+        </div> 
         <h2>Sign in</h2>
         <p id="signin">Welcome to my very first login system, which was made with Node.JS and React!<br></br>
         Please insert your login/email and password for authentication.</p>
