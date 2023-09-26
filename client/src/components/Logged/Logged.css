@@ -6,3 +6,34 @@
 #logged-bg h1, p {
     color: white;
 }
+
+.btn-logout {
+    background-color: #7751dc;
+    color: #fffefd;
+    
+    font-size: 16px;
+    
+    width: 270px;
+    height: 40px;
+    margin-top: 50px;
+    
+    
+    border: none;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,.75);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,.75);
+    box-shadow: 0 2px 2px #000000bf;
+
+    transform-origin: center;
+}
+
+.btn-logout:hover {
+    cursor: pointer;
+    background-color: #5D3EB2;
+    transform: scale(1.05)
+}
+
+.btn-logout:active {
+    background-color: #403366;
+    transform: scale(0.95)
+}

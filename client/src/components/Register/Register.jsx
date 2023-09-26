@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import './Register.css';
 
 
@@ -79,6 +79,9 @@ function Register() {
             {error && <div className="error-message">{error}</div>}
             <div className="reg-container">
               <button type="submit" className="btn-register">Create</button>
+              <Link to="/">
+                <button className="btn-already">I already have an account</button>
+              </Link>
             </div>
           </form>
           <br></br>

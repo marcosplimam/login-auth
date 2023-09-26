@@ -11,7 +11,11 @@ function Logged() {
             <h1>Welcome!</h1>
             <br/>
             <p>You are succesfully logged in.</p>
+            <br/>
             <img src={thumbsupgif} alt="Your GIF Alt Text" />
+            <Link to="/">
+                <button className="btn-logout">Logout</button>
+              </Link>
         </div>
     </div>
 }
